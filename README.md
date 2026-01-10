@@ -50,16 +50,16 @@ SQL Injection in DVWA (Low Security)
 **Key Actions**
 
 - Identified vulnerable input field  
-  ![DVWA SQLi input](capstone/images/smithy-input.png)
+  ![DVWA SQLi input](capstone/smithy-input.png)
 
 - Extracted credentials from users table  
-  ![Users table dump](capstone/images/smithy-dvwa.png)
+  ![Users table dump](capstone/smithy-dvwa.png)
 
 - Cracked MD5 password hash  
-  ![Hash cracked](capstone/images/smithy-crackedpassword.png)
+  ![Hash cracked](capstone/smithy-crackedpassword.png)
 
 - Logged in as Bob Smith via SSH and read flag file  
-  ![SSH and flag](capstone/images/smithy-ssh.png)
+  ![SSH and flag](capstone/smithy-ssh.png)
 
 **Findings**
 

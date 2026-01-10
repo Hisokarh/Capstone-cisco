@@ -50,10 +50,10 @@ SQL Injection in DVWA (Low Security)
 **Key Actions**
 
 - Identified vulnerable input field  
-  ![DVWA SQLi input](capstone/simthy-input.png)
+  ![DVWA SQLi input](capstone/smithy-input.png)
 
 - Extracted credentials from users table  
-  ![Users table dump](capstone/smithy-dvwa.png)
+  ![Users table dump](capstone/simthy-dvwa.png)
 
 - Cracked MD5 password hash  
   ![Hash cracked](capstone/smithy-cracked-password.png)

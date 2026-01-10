@@ -143,7 +143,7 @@ smbclient //10.5.5.14/$print -N
 
 **Exploration & Files Found**  
 Examples of listings and files found while exploring shares (see `capstone/images/`):
-![Challenge3 file open](capstone/smb-enumeration1.png)
+![Challenge wokrfiles found](capstone/smb-enumeration1.png)
 ![SMB file found example](capstone/smb-enumeration2.png)  
 ![Challenge3 file open](capstone/smb-enumeration3.png)
 

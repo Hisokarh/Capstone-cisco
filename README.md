@@ -50,13 +50,13 @@ SQL Injection in DVWA (Low Security)
 **Key Actions**
 
 - Identified vulnerable input field  
-  ![DVWA SQLi input](capstone/smithy-input.png)
+  ![DVWA SQLi input](capstone/simthy-input.png)
 
 - Extracted credentials from users table  
   ![Users table dump](capstone/smithy-dvwa.png)
 
 - Cracked MD5 password hash  
-  ![Hash cracked](capstone/smithy-crackedpassword.png)
+  ![Hash cracked](capstone/smithy-cracked-password.png)
 
 - Logged in as Bob Smith via SSH and read flag file  
   ![SSH and flag](capstone/smithy-ssh.png)
@@ -88,11 +88,11 @@ Directory listing enabled on Apache web server
 ```bash
 nmap --script http-enum -p 80 10.5.5.12
 ```
-![Nmap http-enum](capstone/images/challange-no2-1.png)
+![Nmap http-enum](capstone/challange-no2-1.png)
 
 **Example: Checking `/config/` path and finding flag**
-![Config listing](capstone/images/challenge-no2-2.png)  
-![Challenge2 file open](capstone/images/challenge-no2-3.png)
+![Config listing](capstone/challenge-no2-2.png)  
+![Challenge2 file open](capstone/challenge-no2-3.png)
 
 **Accessible Directories (discovered)**
 
@@ -140,12 +140,12 @@ smbclient -L //10.5.5.14 -N
 smbclient //10.5.5.14/workfiles -N
 smbmap -H 10.5.5.14
 ```
-![SMB enumeration](capstone/images/smb-enumeration.png)
+![SMB enumeration](capstone/smb-enumeration.png)
 
 **Exploration & Files Found**  
 Examples of listings and files found while exploring shares (see `capstone/images/`):
-![SMB file found example](capstone/images/smb-enumeration2.png)  
-![Challenge3 file open](capstone/images/smb-enumeration3.png)
+![SMB file found example](capstone/smb-enumeration2.png)  
+![Challenge3 file open](capstone/smb-enumeration3.png)
 
 **Shares Found (from enumeration)**
 
@@ -193,14 +193,14 @@ Wireshark, tshark, tcpflow
 - Target IP Address: `10.5.5.11`  
 - Directories observed in HTTP requests:
   - `/test/`, `/data/`, `/includes/`, `/passwords/`, `/styles/`, `/javascript/`, `/webservices/`  
-  ![PCAP HTTP requests overview](capstone/images/pca1.png)
+  ![PCAP HTTP requests overview](capstone/pca1.png)
 
 - Flag URL discovered in the capture:  
   `http://10.5.5.11/data/user_accounts.xml`  
-  ![PCAP file object export](capstone/images/pca2.png)
+  ![PCAP file object export](capstone/pca2.png)
 
 - Flag file contents (exported from PCAP / downloaded):  
-  ![Challenge4 file content](capstone/images/pca.png)
+  ![Challenge4 file content](capstone/pca.png)
 
 - Flag Code: `21z-1478K`
 

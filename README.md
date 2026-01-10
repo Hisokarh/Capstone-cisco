@@ -137,13 +137,13 @@ nmap --script http-enum -p 80 10.5.5.12
 nmap -p 139,445 --open -sV -oA smb-scan 10.5.5.0/24
 nmap --script smb-enum-shares.nse -p 445 10.5.5.14
 smbclient -L //10.5.5.14 -N
-smbclient //10.5.5.14/workfiles -N
-smbmap -H 10.5.5.14
+smbclient //10.5.5.14/$print -N
 ```
 ![SMB enumeration](capstone/smb-enumeration.png)
 
 **Exploration & Files Found**  
 Examples of listings and files found while exploring shares (see `capstone/images/`):
+![Work file shares](capstone/smb-enumeration1.png)
 ![SMB file found example](capstone/smb-enumeration2.png)  
 ![Challenge3 file open](capstone/smb-enumeration3.png)
 

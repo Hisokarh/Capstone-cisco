@@ -50,16 +50,16 @@ SQL Injection in DVWA (Low Security)
 **Key Actions**
 
 - Identified vulnerable input field  
-  ![DVWA SQLi input](capstone/images/dvwa_sqli_payload.png)
+  ![DVWA SQLi input](capstone/images/smithy-input.png)
 
 - Extracted credentials from users table  
-  ![Users table dump](capstone/images/sqlmap_dump_users.png)
+  ![Users table dump](capstone/images/smithy-dvwa.png)
 
 - Cracked MD5 password hash  
-  ![Hash cracked](capstone/images/hash_cracked.png)
+  ![Hash cracked](capstone/images/smithy-crackedpassword.png)
 
 - Logged in as Bob Smith via SSH and read flag file  
-  ![SSH and flag](capstone/images/ssh_flag_read.png)
+  ![SSH and flag](capstone/images/smithy-ssh.png)
 
 **Findings**
 
@@ -88,11 +88,11 @@ Directory listing enabled on Apache web server
 ```bash
 nmap --script http-enum -p 80 10.5.5.12
 ```
-![Nmap http-enum](capstone/images/nmap_http_enum.png)
+![Nmap http-enum](capstone/images/challange-no2-1.png)
 
 **Example: Checking `/config/` path and finding flag**
-![Config listing](capstone/images/dir_listing_example.png)  
-![Challenge2 file open](capstone/images/challenge2_file_open.png)
+![Config listing](capstone/images/challenge-no2-2.png)  
+![Challenge2 file open](capstone/images/challenge-no2-3.png)
 
 **Accessible Directories (discovered)**
 
@@ -140,12 +140,12 @@ smbclient -L //10.5.5.14 -N
 smbclient //10.5.5.14/workfiles -N
 smbmap -H 10.5.5.14
 ```
-![SMB enumeration](capstone/images/smb_enum_shares.png)
+![SMB enumeration](capstone/images/smb-enumeration.png)
 
 **Exploration & Files Found**  
 Examples of listings and files found while exploring shares (see `capstone/images/`):
-![SMB file found example](capstone/images/smb_ls_workfiles.png)  
-![Challenge3 file open](capstone/images/challenge3_file.png)
+![SMB file found example](capstone/images/smb-enumeration2.png)  
+![Challenge3 file open](capstone/images/smb-enumeration3.png)
 
 **Shares Found (from enumeration)**
 
@@ -193,14 +193,14 @@ Wireshark, tshark, tcpflow
 - Target IP Address: `10.5.5.11`  
 - Directories observed in HTTP requests:
   - `/test/`, `/data/`, `/includes/`, `/passwords/`, `/styles/`, `/javascript/`, `/webservices/`  
-  ![PCAP HTTP requests overview](capstone/images/wireshark_http_requests.png)
+  ![PCAP HTTP requests overview](capstone/images/pca1.png)
 
 - Flag URL discovered in the capture:  
   `http://10.5.5.11/data/user_accounts.xml`  
-  ![PCAP file object export](capstone/images/pcap_export_object.png)
+  ![PCAP file object export](capstone/images/pca2.png)
 
 - Flag file contents (exported from PCAP / downloaded):  
-  ![Challenge4 file content](capstone/images/challenge4_file.png)
+  ![Challenge4 file content](capstone/images/pca.png)
 
 - Flag Code: `21z-1478K`
 
@@ -239,10 +239,3 @@ All activities were performed in an authorized lab environment for educational p
 - `capstone/images/` — screenshots referenced above (place images here using the filenames in this README)
 
 ---
-
-If you want, I can:
-- commit this updated README to your repository and create placeholder image files in `capstone/images/`, or  
-- generate/fill `capstone/answers.md` with known values (SMB host, shares, remediation items) and leave placeholders only for the final flags you still need to capture.
-
-Tell me which action you want me to take next.  
-```
